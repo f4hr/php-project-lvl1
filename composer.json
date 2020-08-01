@@ -1,0 +1,11 @@
+{
+    "name": "f4hr/brain-games",
+    "description": "Hexlet project",
+    "authors": [
+        {
+            "name": "Ilya Fakhrutdinov",
+            "email": "bekamez@gmail.com"
+        }
+    ],
+    "require": {}
+}
