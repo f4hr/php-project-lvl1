@@ -1,5 +1,6 @@
 {
     "name": "f4hr/brain-games",
+    "bin": ["bin/brain-games"],
     "description": "Hexlet project",
     "authors": [
         {
