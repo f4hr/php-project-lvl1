@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ruleset name="f4hr">
+    <description>Sniffs</description>
+
+    <exclude-pattern>**/vendor/*</exclude-pattern>
+
+    <rule ref="PSR12"></rule>
+</ruleset>
