@@ -24,3 +24,7 @@ $ make install
 ### Brain GCD
 
 [![asciicast](https://asciinema.org/a/jAsx73rrSJIHmas8o6adhAyHy.svg)](https://asciinema.org/a/jAsx73rrSJIHmas8o6adhAyHy)
+
+### Brain Arithmetic progression
+
+[![asciicast](https://asciinema.org/a/v7eyiBPSPUYZwbBQJAb0T76Qv.svg)](https://asciinema.org/a/v7eyiBPSPUYZwbBQJAb0T76Qv)
