@@ -7,10 +7,10 @@ use function cli\prompt;
 
 function getDescription(): string
 {
-    return 'Answer "yes" if the number is even, otherwise answer "no".';
+    return 'Answer "yes" if given number is prime. Otherwise answer "no".';
 }
 
-function checkPrime(int $number): bool
+function isPrime(int $number): bool
 {
     for ($i = 2; $i <= floor($number / 2); $i++) {
         if ($number % $i === 0) {
@@ -21,20 +21,20 @@ function checkPrime(int $number): bool
     return true;
 }
 
-function getQuestion(): array
+function generateQuestion(): array
 {
-    $randomNumber = rand(2, 100); // случайное число от 0 до 100
-    $correctAnswer = (checkPrime($randomNumber)) ? 'yes' : 'no';
+    $randomNumber = rand(2, 100); // случайное число от 2 до 100
+    $correctAnswer = (isPrime($randomNumber)) ? 'yes' : 'no';
 
-    return [$randomNumber, $correctAnswer];
+    return [(string) $randomNumber, $correctAnswer];
 }
 
-function generateQuestions(int $questionsNum): array
+function getQuestions(int $questionsNum): array
 {
     $questions = [];
 
     for ($i = 0; $i < $questionsNum; $i++) {
-        $questions[] = getQuestion();
+        $questions[] = generateQuestion();
     }
 
     return $questions;

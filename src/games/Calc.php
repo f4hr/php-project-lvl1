@@ -10,7 +10,7 @@ function getDescription(): string
     return 'What is the result of the expression?';
 }
 
-function getQuestion(): array
+function generateQuestion(): array
 {
     $randomNumber1 = rand(0, 20); // случайное число от 0 до 20.
     $randomNumber2 = rand(0, 20); // случайное число от 0 до 20.
@@ -41,12 +41,12 @@ function getQuestion(): array
     return [$question, (string) $correctAnswer];
 }
 
-function generateQuestions(int $questionsNum): array
+function getQuestions(int $questionsNum): array
 {
     $questions = [];
 
     for ($i = 0; $i < $questionsNum; $i++) {
-        $questions[] = getQuestion();
+        $questions[] = generateQuestion();
     }
 
     return $questions;

@@ -10,27 +10,27 @@ function getDescription(): string
     return 'Find the greatest common divisor of given numbers.';
 }
 
-function gcd($a, $b)
+function gcd($a, $b): int
 {
     return ($a % $b) ? gcd($b, $a % $b) : abs($b);
 }
 
-function getQuestion(): array
+function generateQuestion(): array
 {
-    $randomNumber1 = rand(0, 50); // случайное число от 0 до 20.
-    $randomNumber2 = rand(0, 50); // случайное число от 0 до 20.
+    $randomNumber1 = rand(0, 50); // случайное число от 0 до 50.
+    $randomNumber2 = rand(0, 50); // случайное число от 0 до 50.
     $question = "{$randomNumber1} {$randomNumber2}";
     $correctAnswer = gcd($randomNumber1, $randomNumber2);
 
     return [$question, (string) $correctAnswer];
 }
 
-function generateQuestions(int $questionsNum): array
+function getQuestions(int $questionsNum): array
 {
     $questions = [];
 
     for ($i = 0; $i < $questionsNum; $i++) {
-        $questions[] = getQuestion();
+        $questions[] = generateQuestion();
     }
 
     return $questions;

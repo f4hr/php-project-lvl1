@@ -10,7 +10,7 @@ function getDescription(): string
     return 'What number is missing in the progression?';
 }
 
-function getQuestion(): array
+function generateQuestion(): array
 {
     $startNumber = rand(0, 10); // случайное стартовое число от 0 до 10.
     $commonDifference = rand(1, 10); // случайная разность прогрессии от 1 до 10.
@@ -18,10 +18,10 @@ function getQuestion(): array
     $missingNumberIndex = rand(0, $progressionLength - 1); // случайный индекс спрятанного числа
 
     $progression = [];
-    $current = $startNumber;
+    $currentNumber = $startNumber;
     for ($i = 0; $i < $progressionLength - 1; $i++) {
-        $progression[] = $current;
-        $current += $commonDifference;
+        $progression[] = $currentNumber;
+        $currentNumber += $commonDifference;
     }
 
     $correctAnswer = $progression[$missingNumberIndex];
@@ -30,12 +30,12 @@ function getQuestion(): array
     return [implode(' ', $progression), (string) $correctAnswer];
 }
 
-function generateQuestions(int $questionsNum): array
+function getQuestions(int $questionsNum): array
 {
     $questions = [];
 
     for ($i = 0; $i < $questionsNum; $i++) {
-        $questions[] = getQuestion();
+        $questions[] = generateQuestion();
     }
 
     return $questions;

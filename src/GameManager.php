@@ -32,8 +32,8 @@ function startGame(string $description, array $questions)
     showGreeting($description);
     $userName = getUserName();
 
-    $questionCount = count($questions); // количество вопросов
-    for ($i = $questionCount - 1; $i >= 0; $i--) {
+    $questionsCount = count($questions); // количество вопросов
+    for ($i = $questionsCount - 1; $i >= 0; $i--) {
         [$question, $correctAnswer] = $questions[$i];
         $userAnswer = prompt("Question: {$question}");
 
@@ -46,55 +46,55 @@ function startGame(string $description, array $questions)
         }
 
         line('Correct!');
-        $questionCount--;
+        $questionsCount--;
     }
 
-    if (0 === $questionCount) {
+    if (0 === $questionsCount) {
         line("Congratulations, {$userName}!");
     }
 }
 
 function startEven()
 {
-    $numberOfQuestion = 3; // magic number
+    $numberOfQuestion = 3;
     $description = Even\getDescription();
-    $questions = Even\generateQuestions($numberOfQuestion);
+    $questions = Even\getQuestions($numberOfQuestion);
 
     startGame($description, $questions);
 }
 
 function startCalc()
 {
-    $numberOfQuestion = 3; // magic number
+    $numberOfQuestion = 3;
     $description = Calc\getDescription();
-    $questions = Calc\generateQuestions($numberOfQuestion);
+    $questions = Calc\getQuestions($numberOfQuestion);
 
     startGame($description, $questions);
 }
 
 function startGcd()
 {
-    $numberOfQuestion = 3; // magic number
+    $numberOfQuestion = 3;
     $description = Gcd\getDescription();
-    $questions = Gcd\generateQuestions($numberOfQuestion);
+    $questions = Gcd\getQuestions($numberOfQuestion);
 
     startGame($description, $questions);
 }
 
 function startProgression()
 {
-    $numberOfQuestion = 3; // magic number
+    $numberOfQuestion = 3;
     $description = Progression\getDescription();
-    $questions = Progression\generateQuestions($numberOfQuestion);
+    $questions = Progression\getQuestions($numberOfQuestion);
 
     startGame($description, $questions);
 }
 
 function startPrime()
 {
-    $numberOfQuestion = 3; // magic number
+    $numberOfQuestion = 3;
     $description = Prime\getDescription();
-    $questions = Prime\generateQuestions($numberOfQuestion);
+    $questions = Prime\getQuestions($numberOfQuestion);
 
     startGame($description, $questions);
 }
