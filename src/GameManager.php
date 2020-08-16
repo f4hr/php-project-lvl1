@@ -4,6 +4,7 @@ namespace Brain\Games\GameManager;
 
 use Brain\Games\Even;
 use Brain\Games\Calc;
+use Brain\Games\Gcd;
 
 use function cli\line;
 use function cli\prompt;
@@ -63,6 +64,15 @@ function startCalc()
     $numberOfQuestion = 3; // magic number
     $description = Calc\getDescription();
     $questions = Calc\generateQuestions($numberOfQuestion);
+
+    startGame($description, $questions);
+}
+
+function startGcd()
+{
+    $numberOfQuestion = 3; // magic number
+    $description = Gcd\getDescription();
+    $questions = Gcd\generateQuestions($numberOfQuestion);
 
     startGame($description, $questions);
 }
