@@ -20,3 +20,7 @@ $ make install
 ### Brain Calc
 
 [![asciicast](https://asciinema.org/a/Vy9ynsVwvIGOpXyfBP5xFfSQk.svg)](https://asciinema.org/a/Vy9ynsVwvIGOpXyfBP5xFfSQk)
+
+### Brain GCD
+
+[![asciicast](https://asciinema.org/a/jAsx73rrSJIHmas8o6adhAyHy.svg)](https://asciinema.org/a/jAsx73rrSJIHmas8o6adhAyHy)
