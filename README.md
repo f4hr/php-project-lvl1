@@ -12,6 +12,12 @@ $ git clone https://github.com/f4hr/php-project-lvl1.git
 $ make install
 ```
 
-## Example
+## Examples
+
+### Brain Even
 
 [![asciicast](https://asciinema.org/a/7cEhsBcBKTKDtJt0Cyap1RvTz.png)](https://asciinema.org/a/7cEhsBcBKTKDtJt0Cyap1RvTz)
+
+### Brain Calc
+
+[![asciicast](https://asciinema.org/a/Vy9ynsVwvIGOpXyfBP5xFfSQk.svg)](https://asciinema.org/a/Vy9ynsVwvIGOpXyfBP5xFfSQk)
