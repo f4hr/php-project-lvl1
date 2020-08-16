@@ -5,6 +5,7 @@ namespace Brain\Games\GameManager;
 use Brain\Games\Even;
 use Brain\Games\Calc;
 use Brain\Games\Gcd;
+use Brain\Games\Progression;
 
 use function cli\line;
 use function cli\prompt;
@@ -13,12 +14,14 @@ function showGreeting($message)
 {
     line('Welcome to the Brain Games!');
     line($message);
+    line();
 }
 
 function getUserName(): string
 {
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
+    line();
 
     return $name;
 }
@@ -73,6 +76,15 @@ function startGcd()
     $numberOfQuestion = 3; // magic number
     $description = Gcd\getDescription();
     $questions = Gcd\generateQuestions($numberOfQuestion);
+
+    startGame($description, $questions);
+}
+
+function startProgression()
+{
+    $numberOfQuestion = 3; // magic number
+    $description = Progression\getDescription();
+    $questions = Progression\generateQuestions($numberOfQuestion);
 
     startGame($description, $questions);
 }
