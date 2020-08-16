@@ -3,6 +3,7 @@
 namespace Brain\Games\GameManager;
 
 use Brain\Games\Even;
+use Brain\Games\Calc;
 
 use function cli\line;
 use function cli\prompt;
@@ -53,6 +54,15 @@ function startEven()
     $numberOfQuestion = 3; // magic number
     $description = Even\getDescription();
     $questions = Even\generateQuestions($numberOfQuestion);
+
+    startGame($description, $questions);
+}
+
+function startCalc()
+{
+    $numberOfQuestion = 3; // magic number
+    $description = Calc\getDescription();
+    $questions = Calc\generateQuestions($numberOfQuestion);
 
     startGame($description, $questions);
 }
