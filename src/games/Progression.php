@@ -12,10 +12,10 @@ function getDescription(): string
 
 function generateQuestion(): array
 {
-    $startNumber = rand(0, 10); // случайное стартовое число от 0 до 10.
-    $commonDifference = rand(1, 10); // случайная разность прогрессии от 1 до 10.
-    $progressionLength = 10; // длина прогрессии
-    $missingNumberIndex = rand(0, $progressionLength - 1); // случайный индекс спрятанного числа
+    $startNumber = rand(0, 10);
+    $commonDifference = rand(1, 10);
+    $progressionLength = 10;
+    $missingNumberIndex = rand(0, $progressionLength - 1);
 
     $progression = [];
     $currentNumber = $startNumber;

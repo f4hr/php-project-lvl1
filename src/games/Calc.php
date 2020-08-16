@@ -12,8 +12,8 @@ function getDescription(): string
 
 function generateQuestion(): array
 {
-    $randomNumber1 = rand(0, 20); // случайное число от 0 до 20.
-    $randomNumber2 = rand(0, 20); // случайное число от 0 до 20.
+    $randomNumber1 = rand(0, 20);
+    $randomNumber2 = rand(0, 20);
     /**
      * Случайный выбор операции над числами.
      *

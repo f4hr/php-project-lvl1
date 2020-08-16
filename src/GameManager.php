@@ -32,7 +32,7 @@ function startGame(string $description, array $questions)
     showGreeting($description);
     $userName = getUserName();
 
-    $questionsCount = count($questions); // количество вопросов
+    $questionsCount = count($questions);
     for ($i = $questionsCount - 1; $i >= 0; $i--) {
         [$question, $correctAnswer] = $questions[$i];
         $userAnswer = prompt("Question: {$question}");

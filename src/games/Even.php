@@ -12,7 +12,7 @@ function getDescription(): string
 
 function generateQuestion(): array
 {
-    $randomNumber = rand(0, 100); // случайное число от 0 до 100
+    $randomNumber = rand(0, 100);
     $isEven = $randomNumber % 2 === 0;
     $correctAnswer = ($isEven) ? 'yes' : 'no';
 

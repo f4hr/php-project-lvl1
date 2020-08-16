@@ -17,8 +17,8 @@ function gcd($a, $b): int
 
 function generateQuestion(): array
 {
-    $randomNumber1 = rand(0, 50); // случайное число от 0 до 50.
-    $randomNumber2 = rand(0, 50); // случайное число от 0 до 50.
+    $randomNumber1 = rand(0, 50);
+    $randomNumber2 = rand(0, 50);
     $question = "{$randomNumber1} {$randomNumber2}";
     $correctAnswer = gcd($randomNumber1, $randomNumber2);
 

@@ -23,7 +23,7 @@ function isPrime(int $number): bool
 
 function generateQuestion(): array
 {
-    $randomNumber = rand(2, 100); // случайное число от 2 до 100
+    $randomNumber = rand(2, 100);
     $correctAnswer = (isPrime($randomNumber)) ? 'yes' : 'no';
 
     return [(string) $randomNumber, $correctAnswer];
