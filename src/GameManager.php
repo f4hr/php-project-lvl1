@@ -6,6 +6,7 @@ use Brain\Games\Even;
 use Brain\Games\Calc;
 use Brain\Games\Gcd;
 use Brain\Games\Progression;
+use Brain\Games\Prime;
 
 use function cli\line;
 use function cli\prompt;
@@ -85,6 +86,15 @@ function startProgression()
     $numberOfQuestion = 3; // magic number
     $description = Progression\getDescription();
     $questions = Progression\generateQuestions($numberOfQuestion);
+
+    startGame($description, $questions);
+}
+
+function startPrime()
+{
+    $numberOfQuestion = 3; // magic number
+    $description = Prime\getDescription();
+    $questions = Prime\generateQuestions($numberOfQuestion);
 
     startGame($description, $questions);
 }
