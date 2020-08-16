@@ -12,7 +12,7 @@ function getDescription(): string
 
 function checkPrime(int $number): bool
 {
-    for ($i = 2; $i < floor($number / 2); $i++) {
+    for ($i = 2; $i <= floor($number / 2); $i++) {
         if ($number % $i === 0) {
             return false;
         }
@@ -24,7 +24,6 @@ function checkPrime(int $number): bool
 function getQuestion(): array
 {
     $randomNumber = rand(2, 100); // случайное число от 0 до 100
-    $isPrime = $randomNumber % 2 === 0;
     $correctAnswer = (checkPrime($randomNumber)) ? 'yes' : 'no';
 
     return [$randomNumber, $correctAnswer];
