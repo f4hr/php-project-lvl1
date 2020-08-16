@@ -28,3 +28,7 @@ $ make install
 ### Brain Arithmetic progression
 
 [![asciicast](https://asciinema.org/a/v7eyiBPSPUYZwbBQJAb0T76Qv.svg)](https://asciinema.org/a/v7eyiBPSPUYZwbBQJAb0T76Qv)
+
+### Brain Is Prime?
+
+[![asciicast](https://asciinema.org/a/48aj2MVGU5z6D7XDRc4N6BKZp.svg)](https://asciinema.org/a/48aj2MVGU5z6D7XDRc4N6BKZp)
