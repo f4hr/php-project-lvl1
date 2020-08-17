@@ -1,14 +1,12 @@
 <?php
 
-namespace Brain\Games\Progression;
+namespace BrainGames\Game\Progression;
 
-use function cli\line;
-use function cli\prompt;
+use function BrainGames\GameEngine\startGame;
 
-function getDescription(): string
-{
-    return 'What number is missing in the progression?';
-}
+use const BrainGames\GameEngine\ROUNDS_COUNTER;
+
+const GAME_DESCRIPTION = 'What number is missing in the progression?';
 
 function generateQuestion(): array
 {
@@ -30,13 +28,13 @@ function generateQuestion(): array
     return [implode(' ', $progression), (string) $correctAnswer];
 }
 
-function getQuestions(int $questionsNum): array
+function startProgressionGame()
 {
-    $questions = [];
+    $gameData = [];
 
-    for ($i = 0; $i < $questionsNum; $i++) {
-        $questions[] = generateQuestion();
+    for ($i = 0; $i < ROUNDS_COUNTER; $i++) {
+        $gameData[] = generateQuestion();
     }
 
-    return $questions;
+    startGame(GAME_DESCRIPTION, $gameData);
 }

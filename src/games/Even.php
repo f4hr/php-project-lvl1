@@ -1,14 +1,12 @@
 <?php
 
-namespace Brain\Games\Even;
+namespace BrainGames\Game\Even;
 
-use function cli\line;
-use function cli\prompt;
+use function BrainGames\GameEngine\startGame;
 
-function getDescription(): string
-{
-    return 'Answer "yes" if the number is even, otherwise answer "no".';
-}
+use const BrainGames\GameEngine\ROUNDS_COUNTER;
+
+const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function generateQuestion(): array
 {
@@ -19,13 +17,13 @@ function generateQuestion(): array
     return [(string) $randomNumber, $correctAnswer];
 }
 
-function getQuestions(int $questionsNum): array
+function startEvenGame()
 {
-    $questions = [];
+    $gameData = [];
 
-    for ($i = 0; $i < $questionsNum; $i++) {
-        $questions[] = generateQuestion();
+    for ($i = 0; $i < ROUNDS_COUNTER; $i++) {
+        $gameData[] = generateQuestion();
     }
 
-    return $questions;
+    startGame(GAME_DESCRIPTION, $gameData);
 }

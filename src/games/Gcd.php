@@ -1,14 +1,12 @@
 <?php
 
-namespace Brain\Games\Gcd;
+namespace BrainGames\Game\Gcd;
 
-use function cli\line;
-use function cli\prompt;
+use function BrainGames\GameEngine\startGame;
 
-function getDescription(): string
-{
-    return 'Find the greatest common divisor of given numbers.';
-}
+use const BrainGames\GameEngine\ROUNDS_COUNTER;
+
+const GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
 function gcd($a, $b): int
 {
@@ -25,13 +23,13 @@ function generateQuestion(): array
     return [$question, (string) $correctAnswer];
 }
 
-function getQuestions(int $questionsNum): array
+function startGcdGame()
 {
-    $questions = [];
+    $gameData = [];
 
-    for ($i = 0; $i < $questionsNum; $i++) {
-        $questions[] = generateQuestion();
+    for ($i = 0; $i < ROUNDS_COUNTER; $i++) {
+        $gameData[] = generateQuestion();
     }
 
-    return $questions;
+    startGame(GAME_DESCRIPTION, $gameData);
 }

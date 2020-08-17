@@ -1,14 +1,12 @@
 <?php
 
-namespace Brain\Games\Prime;
+namespace BrainGames\Game\Prime;
 
-use function cli\line;
-use function cli\prompt;
+use function BrainGames\GameEngine\startGame;
 
-function getDescription(): string
-{
-    return 'Answer "yes" if given number is prime. Otherwise answer "no".';
-}
+use const BrainGames\GameEngine\ROUNDS_COUNTER;
+
+const GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function isPrime(int $number): bool
 {
@@ -29,13 +27,13 @@ function generateQuestion(): array
     return [(string) $randomNumber, $correctAnswer];
 }
 
-function getQuestions(int $questionsNum): array
+function startPrimeGame()
 {
-    $questions = [];
+    $gameData = [];
 
-    for ($i = 0; $i < $questionsNum; $i++) {
-        $questions[] = generateQuestion();
+    for ($i = 0; $i < ROUNDS_COUNTER; $i++) {
+        $gameData[] = generateQuestion();
     }
 
-    return $questions;
+    startGame(GAME_DESCRIPTION, $gameData);
 }

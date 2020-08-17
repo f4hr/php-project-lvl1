@@ -1,16 +1,14 @@
 <?php
 
-namespace Brain\Games\Calc;
+namespace BrainGames\Game\Calc;
 
-use function cli\line;
-use function cli\prompt;
+use function BrainGames\GameEngine\startGame;
 
-function getDescription(): string
-{
-    return 'What is the result of the expression?';
-}
+use const BrainGames\GameEngine\ROUNDS_COUNTER;
 
-function generateQuestion(): array
+const GAME_DESCRIPTION = 'What is the result of the expression?';
+
+function generateQuestion(): ?array
 {
     $randomNumber1 = rand(0, 20);
     $randomNumber2 = rand(0, 20);
@@ -36,18 +34,20 @@ function generateQuestion(): array
             $question = "{$randomNumber1} * {$randomNumber2}";
             $correctAnswer = $randomNumber1 * $randomNumber2;
             break;
+        default:
+            return null;
     }
 
     return [$question, (string) $correctAnswer];
 }
 
-function getQuestions(int $questionsNum): array
+function startCalcGame()
 {
-    $questions = [];
+    $gameData = [];
 
-    for ($i = 0; $i < $questionsNum; $i++) {
-        $questions[] = generateQuestion();
+    for ($i = 0; $i < ROUNDS_COUNTER; $i++) {
+        $gameData[] = generateQuestion();
     }
 
-    return $questions;
+    startGame(GAME_DESCRIPTION, $gameData);
 }

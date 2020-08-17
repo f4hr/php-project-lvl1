@@ -10,6 +10,6 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use Brain\Games\GameManager;
+use function BrainGames\Game\Prime\startPrimeGame;
 
-GameManager\startPrime();
+startPrimeGame();
