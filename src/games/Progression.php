@@ -17,7 +17,7 @@ function generateQuestion(): array
 
     $progression = [];
     $currentNumber = $startNumber;
-    for ($i = 0; $i < $progressionLength - 1; $i++) {
+    for ($i = 0; $i < $progressionLength; $i++) {
         $progression[] = $currentNumber;
         $currentNumber += $commonDifference;
     }
