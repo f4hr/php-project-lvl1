@@ -7,26 +7,14 @@ use function cli\prompt;
 
 const ROUNDS_COUNTER = 3;
 
-function showGreeting($message)
-{
-    line('Welcome to the Brain Games!');
-    line($message);
-    line();
-}
-
-function getUserName(): string
-{
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    line();
-
-    return $name;
-}
-
 function startGame(string $gameDescription, array $gameData)
 {
-    showGreeting($gameDescription);
-    $userName = getUserName();
+    line('Welcome to the Brain Games!');
+    line($gameDescription);
+    line();
+    $userName = prompt('May I have your name?');
+    line("Hello, %s!", $userName);
+    line();
 
     for ($i = 0; $i < ROUNDS_COUNTER; $i++) {
         [$question, $correctAnswer] = $gameData[$i];
