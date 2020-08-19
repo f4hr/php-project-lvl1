@@ -8,7 +8,7 @@ use const BrainGames\GameEngine\ROUNDS_COUNTER;
 
 const GAME_DESCRIPTION = 'What number is missing in the progression?';
 
-function generateGameData(): array
+function generateRoundData(): array
 {
     $startNumber = rand(0, 10);
     $commonDifference = rand(1, 10);
@@ -33,7 +33,7 @@ function startProgressionGame()
     $gameData = [];
 
     for ($i = 0; $i < ROUNDS_COUNTER; $i++) {
-        $gameData[] = generateGameData();
+        $gameData[] = generateRoundData();
     }
 
     startGame(GAME_DESCRIPTION, $gameData);

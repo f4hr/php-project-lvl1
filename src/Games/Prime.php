@@ -19,7 +19,7 @@ function isPrime(int $number): bool
     return true;
 }
 
-function generateGameData(): array
+function generateRoundData(): array
 {
     $randomNumber = rand(2, 100);
     $correctAnswer = (isPrime($randomNumber)) ? 'yes' : 'no';
@@ -32,7 +32,7 @@ function startPrimeGame()
     $gameData = [];
 
     for ($i = 0; $i < ROUNDS_COUNTER; $i++) {
-        $gameData[] = generateGameData();
+        $gameData[] = generateRoundData();
     }
 
     startGame(GAME_DESCRIPTION, $gameData);

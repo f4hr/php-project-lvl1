@@ -13,7 +13,7 @@ function gcd($a, $b): int
     return ($a % $b) ? gcd($b, $a % $b) : abs($b);
 }
 
-function generateGameData(): array
+function generateRoundData(): array
 {
     $randomNumber1 = rand(0, 50);
     $randomNumber2 = rand(0, 50);
@@ -28,7 +28,7 @@ function startGcdGame()
     $gameData = [];
 
     for ($i = 0; $i < ROUNDS_COUNTER; $i++) {
-        $gameData[] = generateGameData();
+        $gameData[] = generateRoundData();
     }
 
     startGame(GAME_DESCRIPTION, $gameData);

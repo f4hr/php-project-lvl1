@@ -8,7 +8,7 @@ use const BrainGames\GameEngine\ROUNDS_COUNTER;
 
 const GAME_DESCRIPTION = 'What is the result of the expression?';
 
-function generateGameData(): ?array
+function generateRoundData(): ?array
 {
     $randomNumber1 = rand(0, 20);
     $randomNumber2 = rand(0, 20);
@@ -46,7 +46,7 @@ function startCalcGame()
     $gameData = [];
 
     for ($i = 0; $i < ROUNDS_COUNTER; $i++) {
-        $gameData[] = generateGameData();
+        $gameData[] = generateRoundData();
     }
 
     startGame(GAME_DESCRIPTION, $gameData);
