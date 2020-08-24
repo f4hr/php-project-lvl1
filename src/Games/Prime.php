@@ -10,6 +10,10 @@ const GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answe
 
 function isPrime(int $number): bool
 {
+    if ($number <= 1) {
+        return false;
+    }
+
     for ($i = 2; $i <= floor($number / 2); $i++) {
         if ($number % $i === 0) {
             return false;
