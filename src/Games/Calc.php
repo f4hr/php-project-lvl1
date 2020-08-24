@@ -7,36 +7,34 @@ use function BrainGames\GameEngine\startGame;
 use const BrainGames\GameEngine\ROUNDS_COUNT;
 
 const GAME_DESCRIPTION = 'What is the result of the expression?';
+const OPERATORS = ['+', '-', '*'];
+
+function getExpressionResult(int $num1, int $num2, string $operator): ?int
+{
+    switch ($operator) {
+        case '+': // сложение
+            return $num1 + $num2;
+            break;
+        case '-': // вычитание
+            return $num1 - $num2;
+            break;
+        case '*': // умножение
+            return $num1 * $num2;
+            break;
+        default:
+            return null;
+    }
+}
 
 function generateRoundData(): ?array
 {
     $randomNumber1 = rand(0, 20);
     $randomNumber2 = rand(0, 20);
-    /**
-     * Случайный выбор операции над числами.
-     *
-     * 0 - сложение  (+)
-     * 1 - вычитание (-)
-     * 2 - умножение (*)
-     */
-    $operation = rand(0, 2);
 
-    switch ($operation) {
-        case 0: // сложение
-            $question = "{$randomNumber1} + {$randomNumber2}";
-            $correctAnswer = $randomNumber1 + $randomNumber2;
-            break;
-        case 1: // вычитание
-            $question = "{$randomNumber1} - {$randomNumber2}";
-            $correctAnswer = $randomNumber1 - $randomNumber2;
-            break;
-        case 2: // умножение
-            $question = "{$randomNumber1} * {$randomNumber2}";
-            $correctAnswer = $randomNumber1 * $randomNumber2;
-            break;
-        default:
-            return null;
-    }
+    $operator = OPERATORS[array_rand(OPERATORS, 1)];
+
+    $question = "{$randomNumber1} {$operator} {$randomNumber2}";
+    $correctAnswer = getExpressionResult($randomNumber1, $randomNumber2, $operator);
 
     return [$question, (string) $correctAnswer];
 }
