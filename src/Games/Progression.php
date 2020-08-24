@@ -4,7 +4,7 @@ namespace BrainGames\Games\Progression;
 
 use function BrainGames\GameEngine\startGame;
 
-use const BrainGames\GameEngine\ROUNDS_COUNTER;
+use const BrainGames\GameEngine\ROUNDS_COUNT;
 
 const GAME_DESCRIPTION = 'What number is missing in the progression?';
 
@@ -32,7 +32,7 @@ function startProgressionGame()
 {
     $gameData = [];
 
-    for ($i = 0; $i < ROUNDS_COUNTER; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $gameData[] = generateRoundData();
     }
 

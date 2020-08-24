@@ -4,7 +4,7 @@ namespace BrainGames\Games\Calc;
 
 use function BrainGames\GameEngine\startGame;
 
-use const BrainGames\GameEngine\ROUNDS_COUNTER;
+use const BrainGames\GameEngine\ROUNDS_COUNT;
 
 const GAME_DESCRIPTION = 'What is the result of the expression?';
 
@@ -45,7 +45,7 @@ function startCalcGame()
 {
     $gameData = [];
 
-    for ($i = 0; $i < ROUNDS_COUNTER; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $gameData[] = generateRoundData();
     }
 

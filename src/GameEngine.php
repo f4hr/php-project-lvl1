@@ -5,7 +5,7 @@ namespace BrainGames\GameEngine;
 use function cli\line;
 use function cli\prompt;
 
-const ROUNDS_COUNTER = 3;
+const ROUNDS_COUNT = 3;
 
 function startGame(string $gameDescription, array $gameData)
 {
@@ -16,7 +16,7 @@ function startGame(string $gameDescription, array $gameData)
     line("Hello, %s!", $userName);
     line();
 
-    for ($i = 0; $i < ROUNDS_COUNTER; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         [$question, $correctAnswer] = $gameData[$i];
         line("Question: {$question}");
         $userAnswer = prompt("Your answer");

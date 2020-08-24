@@ -4,7 +4,7 @@ namespace BrainGames\Games\Prime;
 
 use function BrainGames\GameEngine\startGame;
 
-use const BrainGames\GameEngine\ROUNDS_COUNTER;
+use const BrainGames\GameEngine\ROUNDS_COUNT;
 
 const GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -31,7 +31,7 @@ function startPrimeGame()
 {
     $gameData = [];
 
-    for ($i = 0; $i < ROUNDS_COUNTER; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $gameData[] = generateRoundData();
     }
 
