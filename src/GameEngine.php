@@ -18,9 +18,8 @@ function startGame(string $gameDescription, array $gameData)
 
     for ($i = 0; $i < ROUNDS_COUNTER; $i++) {
         [$question, $correctAnswer] = $gameData[$i];
-        $userAnswer = prompt("Question: {$question}");
-
-        line("Your answer: {$userAnswer}");
+        line("Question: {$question}");
+        $userAnswer = prompt("Your answer");
 
         if ($userAnswer !== $correctAnswer) {
             line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
