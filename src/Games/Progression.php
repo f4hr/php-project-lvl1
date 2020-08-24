@@ -8,6 +8,18 @@ use const BrainGames\GameEngine\ROUNDS_COUNT;
 
 const GAME_DESCRIPTION = 'What number is missing in the progression?';
 
+function generateProgression(int $startNumber, int $commonDifference, int $progressionLength): array
+{
+    $progression = [];
+    $currentNumber = $startNumber;
+    for ($i = 0; $i < $progressionLength; $i++) {
+        $progression[] = $currentNumber;
+        $currentNumber += $commonDifference;
+    }
+
+    return $progression;
+}
+
 function generateRoundData(): array
 {
     $startNumber = rand(0, 10);
@@ -15,12 +27,7 @@ function generateRoundData(): array
     $progressionLength = 10;
     $missingNumberIndex = rand(0, $progressionLength - 1);
 
-    $progression = [];
-    $currentNumber = $startNumber;
-    for ($i = 0; $i < $progressionLength; $i++) {
-        $progression[] = $currentNumber;
-        $currentNumber += $commonDifference;
-    }
+    $progression = generateProgression($startNumber, $commonDifference, $progressionLength);
 
     $correctAnswer = $progression[$missingNumberIndex];
     $progression[$missingNumberIndex] = '..';
