@@ -1,7 +1,7 @@
 # Brain Games
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/1fb00584989a172c5f37/maintainability)](https://codeclimate.com/github/f4hr/php-project-lvl1/maintainability)
-![PHP CI](https://github.com/f4hr/php-project-lvl1/workflows/PHP%20CI/badge.svg)
+[![PHP CI](https://github.com/f4hr/php-project-lvl1/workflows/PHP%20CI/badge.svg)](https://github.com/f4hr/php-project-lvl1/actions?query=workflow%3A%22PHP+CI%22)
 
 ## Setup
 
